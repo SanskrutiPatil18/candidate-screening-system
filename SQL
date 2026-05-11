@@ -1,0 +1,26 @@
+CREATE TABLE candidates (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    resume_text TEXT,
+    role TEXT
+);
+
+CREATE TABLE sessions (
+    id INTEGER PRIMARY KEY,
+    candidate_id INTEGER,
+    start_time TIMESTAMP,
+    end_time TIMESTAMP
+);
+
+CREATE TABLE questions (
+    id INTEGER PRIMARY KEY,
+    session_id INTEGER,
+    text TEXT,
+    context TEXT
+);
+
+CREATE TABLE answers (
+    id INTEGER PRIMARY KEY,
+    question_id INTEGER,
+    response TEXT
+);
